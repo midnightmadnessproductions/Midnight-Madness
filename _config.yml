@@ -1,0 +1,13 @@
+title: Midnight Madness Productions
+description: Midnight Madness es una pequeña productora de podcasts de ficción, nacida del 'estamos en ello' de dos estudiantes de audiovisuales.
+url: "https://midnightmadnessproductions.github.io"
+baseurl: "/Midnight-Madness"
+lang: es
+timezone: Europe/Madrid
+permalink: /contenido/:title/
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post

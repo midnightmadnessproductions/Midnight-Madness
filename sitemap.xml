@@ -1,9 +1,7 @@
+---
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://midnightmadnessproductions.github.io/Midnight-Madness/</loc></url>
-<url><loc>https://midnightmadnessproductions.github.io/Midnight-Madness/producciones.html</loc></url>
-<url><loc>https://midnightmadnessproductions.github.io/Midnight-Madness/agencia.html</loc></url>
-<url><loc>https://midnightmadnessproductions.github.io/Midnight-Madness/contenido.html</loc></url>
-<url><loc>https://midnightmadnessproductions.github.io/Midnight-Madness/contacto.html</loc></url>
-<url><loc>https://midnightmadnessproductions.github.io/Midnight-Madness/legal.html</loc></url>
-</urlset>
+{% for p in site.pages %}{% if p.layout %}<url><loc>{{ p.url | absolute_url }}</loc></url>
+{% endif %}{% endfor %}{% for p in site.posts %}<url><loc>{{ p.url | absolute_url }}</loc></url>
+{% endfor %}</urlset>

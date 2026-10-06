@@ -1,0 +1,54 @@
+media:
+  input: uploads
+  output: /Midnight-Madness/uploads
+content:
+  - name: textos
+    label: Textos y ajustes de la web
+    type: file
+    path: _data/site.yml
+    fields:
+      - { name: hero_titulo, label: Titular de la portada, type: string }
+      - { name: hero_texto, label: Texto bajo el titular, type: text }
+      - { name: sobre, label: Sobre Midnight Madness, type: text }
+      - { name: agencia_texto, label: Texto de Agencia, type: text }
+      - { name: legal_cookies, label: Política de cookies, type: text }
+      - { name: legal_privacidad, label: Política de privacidad, type: text }
+      - { name: legal_aviso, label: Aviso legal, type: text }
+      - { name: logo, label: Logo, type: image }
+      - { name: color_acento, label: Color naranja (ej. #f58220), type: string }
+      - { name: color_fondo, label: Color azul marino (ej. #0b1b3a), type: string }
+      - { name: formspree, label: Código de Formspree (formulario de contacto), type: string }
+      - name: redes
+        label: Redes sociales
+        type: object
+        list: true
+        fields:
+          - { name: nombre, label: Nombre, type: string }
+          - { name: url, label: Enlace, type: string }
+  - name: producciones
+    label: Producciones
+    type: file
+    path: _data/producciones.yml
+    fields:
+      - name: items
+        label: Producciones
+        type: object
+        list: true
+        fields:
+          - { name: titulo, label: Título, type: string }
+          - { name: imagen, label: Carátula, type: image }
+          - { name: enlace, label: Enlace, type: string }
+  - name: entradas
+    label: Contenido adicional (blog)
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date]
+      primary: title
+    fields:
+      - { name: title, label: Título, type: string }
+      - { name: date, label: Fecha, type: date }
+      - { name: description, label: Resumen, type: text }
+      - { name: imagen, label: Imagen de portada, type: image }
+      - { name: body, label: Texto, type: rich-text }
